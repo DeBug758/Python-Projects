@@ -1,0 +1,18 @@
+{% if virtual_hosts %}
+  {% for host in virtual_hosts %}
+<VirtualHost *:80>
+  ServerName {{ host.server_name }}
+  DocumentRoot {{ host.document_root }}
+  ServerAdmin {{ host.server_admin }}
+  <Directory "{{ host.directory_path }}">
+    AllowOverride All
+    Options Indexes FollowSymLinks
+    Order allow,deny
+    Allow from all
+  </Directory>
+</VirtualHost>
+
+  {% endfor %}
+{% else %}
+# No virtual hosts defined
+{% endif %}

@@ -1,0 +1,9 @@
+virtual_hosts:
+  - server_name: www.domain1.tld
+    document_root: /www/domain1
+    server_admin: admin1@domain1.tld
+    directory_path: "/usr/local/httpd/htdocs"
+  - server_name: www.domain2.tld
+    document_root: /www/domain2
+    server_admin: admin2@domain2.tld
+    directory_path: "/usr/local/httpd/htdocs"
